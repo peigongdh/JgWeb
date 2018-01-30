@@ -28,11 +28,15 @@ public class User extends BaseModel {
 
     // Constructors
 
-    /** default constructor */
+    /**
+     * default constructor
+     */
     public User() {
     }
 
-    /** full constructor */
+    /**
+     * full constructor
+     */
     public User(String username, String password, Long lastLoginTime, Long creatTime) {
         this.username = username;
         this.password = password;

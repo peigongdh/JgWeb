@@ -12,8 +12,8 @@ import com.zhaidaosi.game.jgframework.common.sdm.BaseDao;
  * provides additional information for how to configure it for the desired type
  * of transaction control.
  *
- * @see com.dao.User
  * @author MyEclipse Persistence Tools
+ * @see com.dao.User
  */
 @Repository
 public class UserDAO extends BaseDao {

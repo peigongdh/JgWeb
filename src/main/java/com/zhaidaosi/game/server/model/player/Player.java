@@ -42,7 +42,7 @@ public class Player extends BasePlayer {
 
         actionJson = BaseJson.JsonToObject(userInfo.getActions(), Map.class);
 
-        for (Map.Entry<String, Integer> entry : actionJson.entrySet()) {
+        for (Entry<String, Integer> entry : actionJson.entrySet()) {
             AttackAction attackAction = (AttackAction) ActionManager.getAction(Integer.parseInt(entry.getKey()));
             attackAction.setLevel(entry.getValue());
             this.addAction(attackAction);

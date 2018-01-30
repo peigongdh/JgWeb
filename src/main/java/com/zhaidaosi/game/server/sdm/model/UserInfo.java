@@ -26,11 +26,15 @@ public class UserInfo extends BaseModel {
 
     // Constructors
 
-    /** default constructor */
+    /**
+     * default constructor
+     */
     public UserInfo() {
     }
 
-    /** full constructor */
+    /**
+     * full constructor
+     */
     public UserInfo(Integer uid, String nickname, Integer level, Integer experience, String actions) {
         this.uid = uid;
         this.nickname = nickname;

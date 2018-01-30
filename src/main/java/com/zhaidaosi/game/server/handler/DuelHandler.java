@@ -29,7 +29,7 @@ public class DuelHandler extends BaseHandler {
             return OutMessage.showError("目标用户已下线");
         }
         synchronized (target) {
-            if(target.gArea().getName().endsWith(DuelZone.ZONE_NAME)) {
+            if (target.gArea().getName().endsWith(DuelZone.ZONE_NAME)) {
                 return OutMessage.showError("目标用户正在打斗中...");
             }
             //new 一个打架场地
