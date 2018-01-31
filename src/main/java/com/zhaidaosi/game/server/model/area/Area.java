@@ -1,6 +1,7 @@
 package com.zhaidaosi.game.server.model.area;
 
 import com.zhaidaosi.game.jgframework.model.area.BaseArea;
+import io.netty.channel.group.ChannelGroup;
 
 public class Area extends BaseArea {
 
@@ -15,4 +16,8 @@ public class Area extends BaseArea {
 
     }
 
+    @Override
+    public ChannelGroup getChannelGroup() {
+        return super.getChannelGroup();
+    }
 }
