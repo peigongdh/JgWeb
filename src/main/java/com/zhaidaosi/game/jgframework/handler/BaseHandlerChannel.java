@@ -45,7 +45,7 @@ public class BaseHandlerChannel {
     public ChannelGroupFuture writeGroup(OutMessage message) {
         message.setH(handlerName);
         if (chanelGroup != null) {
-            return chanelGroup.write(message);
+            return chanelGroup.writeAndFlush(message);
         }
         return null;
     }
