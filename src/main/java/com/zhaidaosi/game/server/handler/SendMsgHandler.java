@@ -27,7 +27,7 @@ public class SendMsgHandler extends BaseHandler {
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("msg", msg);
         map.put("player", player);
-        area.getChannelGroup().write(OutMessage.showSucc(map, this.handlerName));
+        area.getChannelGroup().writeAndFlush(OutMessage.showSucc(map, this.handlerName));
         return null;
     }
 

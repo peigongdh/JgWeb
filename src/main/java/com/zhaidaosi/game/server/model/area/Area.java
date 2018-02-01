@@ -15,9 +15,4 @@ public class Area extends BaseArea {
     public void init() {
 
     }
-
-    @Override
-    public ChannelGroup getChannelGroup() {
-        return super.getChannelGroup();
-    }
 }
