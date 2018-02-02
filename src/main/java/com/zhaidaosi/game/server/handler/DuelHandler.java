@@ -37,7 +37,7 @@ public class DuelHandler extends BaseHandler {
             Player winer = Duel.doDuel(me, target, zone, this.getHandlerName());
             winer.addExperience(5);
         }
-        return OutMessage.showSucc(me);
+        return null;
     }
 
 }
