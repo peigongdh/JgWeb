@@ -230,6 +230,9 @@ public class SessionManager {
         return OutMessage.showSucc(index, Router.WAIT_HANDLERNAME);
     }
 
+    /**
+     * time task for wait queue, limit max user and send wait msg to client
+     */
     private static class QueueTimerTask extends TimerTask {
         @Override
         public void run() {
@@ -254,6 +257,7 @@ public class SessionManager {
                     waitUserIdChannels.remove(userId);
                     player.setIsInQueue(false);
                     userIdChannels.put(userId, ch);
+                    // now waitQueue index = 0, let client send init msg
                     ch.writeAndFlush(getWaitMessage(player));
                 }
                 BaseQueueElement<Channel> start = waitQueue.getStart();
