@@ -11,7 +11,7 @@ import java.util.concurrent.ConcurrentMap;
  */
 public class BaseLocalCached {
 
-    public static final String INVALID = "%IT IS INVALID!!%";
+    private static final String INVALID = "%IT IS INVALID!!%";
 
     private class BaseCacheElement {
         private Object value;
@@ -23,7 +23,7 @@ public class BaseLocalCached {
         }
     }
 
-    private ConcurrentMap<String, BaseCacheElement> cache = new ConcurrentHashMap<String, BaseCacheElement>();
+    private ConcurrentMap<String, BaseCacheElement> cache = new ConcurrentHashMap<>();
 
     private static Timer timer = null;
     private static List<BaseLocalCached> list = Collections.synchronizedList(new ArrayList<BaseLocalCached>());
@@ -52,7 +52,7 @@ public class BaseLocalCached {
         cache.put(key, new BaseCacheElement(value, 0L));
     }
 
-    public void delete(String key) {
+    private void delete(String key) {
         cache.remove(key);
     }
 
@@ -82,10 +82,7 @@ public class BaseLocalCached {
         if (element == null) {
             return false;
         }
-        if (element.failureTime == 0L || element.failureTime > System.currentTimeMillis()) {
-            return true;
-        }
-        return false;
+        return element.failureTime == 0L || element.failureTime > System.currentTimeMillis();
     }
 
     public static void startTimer() {
